@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
 <title>FURNICRAFT - Checkout</title>
@@ -421,14 +422,14 @@ border-bottom:2px solid black;
 <div id="header-wrapper">
 <div id="logo"><a href="index.html">FURNICRAFT</a></div>
 <div id="headlink">
-  <a href="login.html"><i class="fa fa-user-circle"></i> Login</a>
+  <a href="user.html"><i class="fa fa-user-circle"></i> afriza</a>
 </div>
 </div>
 <div style="clear:both"/>
 <div id="menu">
   <div id="left">
   <ul>
-  <li><a class="active" href="#home">Home</a></li>
+  <li><a class="active" href="index.html">Home</a></li>
   <li><a href="#new">Whats New</a></li>
   <li><a href="#furniture">Furniture</a></li>
   <li><a href="#handicraft">Handicraft</a></li>
@@ -615,26 +616,26 @@ border-bottom:2px solid black;
 <div style="clear:both"/>
 </div>
 <script type="text/javascript">
-function deleteConf(){
-event.preventDefault();
-if(confirm('Apakah Anda yakin?')){
-var barang = document.getElementsByClassName('row');
-console.log(barang.length);
-// $('.row').remove();
-while(barang.length > 0){
-       barang[0].parentNode.removeChild(barang[0]);
-   }
+   function deleteConf(){
+   event.preventDefault();
+   if(confirm('Apakah Anda yakin?')){
+   var barang = document.getElementsByClassName('row');
+   console.log(barang.length);
+   // $('.row').remove();
+   while(barang.length > 0){
+          barang[0].parentNode.removeChild(barang[0]);
+      }
 
-   $('.title').after('<div class="row" style="border:0;text-align:center"><div class="column" style="width:98%">Tidak ada barang dalam troli</div></div>');
-// console.log(d.outerHTML);
-var bdel = document.getElementById('delete');
-var call = document.getElementById('checkall');
-var cbut = document.getElementById('checkoutbutton');
-bdel.style.display = "none";
-call.style.display = "none";
-cbut.style.display = "none";
-}
-}
+      $('.title').after('<div class="row" style="border:0;text-align:center"><div class="column" style="width:98%">Tidak ada barang dalam troli</div></div>');
+   // console.log(d.outerHTML);
+   var bdel = document.getElementById('delete');
+   var call = document.getElementById('checkall');
+   var cbut = document.getElementById('checkoutbutton');
+   bdel.style.display = "none";
+   call.style.display = "none";
+   cbut.style.display = "none";
+   }
+   }
 </script>
 <script type="text/javascript" src="assets/jquery341.js"></script>
 </body>
