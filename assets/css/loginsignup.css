@@ -1,0 +1,90 @@
+a {
+	text-decoration: none;
+	color: white;
+}
+
+body {
+	margin: auto;
+	font-family: Calibri;
+	overflow: auto;
+	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAABHNCSVQICAgIfAhkiAAAAF96VFh0UmF3IHByb2ZpbGUgdHlwZSBBUFAxAAAImeNKT81LLcpMVigoyk/LzEnlUgADYxMuE0sTS6NEAwMDCwMIMDQwMDYEkkZAtjlUKNEABZiYm6UBoblZspkpiM8FAE+6FWgbLdiMAAAAF0lEQVQYlWNgIAKwiZiqjSqipyIGBgYAqCwEk6vXHoMAAAAASUVORK5CYII=);
+}
+
+#container {
+	color: white;
+	background: #5d5d5d;
+	width: 500px;
+	height: 500px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	padding: 10px;
+}
+
+#login {
+	position: absolute;
+	top: 58%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	margin-bottom: 10px;
+}
+
+#logo {
+	width: 300px;
+	height: 100px;
+	border: 2px solid white;
+	font-family: Impact;
+	font-size: 50px;
+	text-align: center;
+	margin: auto;
+	margin-bottom: 10px;
+}
+
+#logo:after {
+	white-space: pre-wrap;
+	content: "\a One Stop Furniture \a and Handicraft Solution";
+	font-size: 15px;
+	font-family: Calibri;
+}
+
+#userlogin input {
+	width: 200px;
+	background: none;
+	border: 0;
+	border-bottom: 2px solid white;
+	height: 30px;
+	padding: 5px;
+	color: white;
+	margin-bottom: 15px;
+}
+
+#sociallogin i {
+	font-size: 40px;
+	margin: auto;
+	text-align: center;
+}
+
+#sociallogin {
+	text-align: center;
+}
+
+#sociallogin #button {
+	border: 0;
+	background: #4CAF50;
+	width: 80px;
+	line-height: 25px;
+	color: white;
+	margin: auto;
+	display: inline-block;
+}
+
+#footer {
+	position: absolute;
+	bottom: 0%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+}

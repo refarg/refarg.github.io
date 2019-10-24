@@ -1,0 +1,40 @@
+/* User Details */
+
+#userdetail-wrapper {
+	width: 500px;
+	clear: both;
+	margin: auto;
+	margin-bottom: 10px;
+}
+
+#userdetail-wrapper table {
+	margin: auto;
+}
+
+#userdetail-wrapper input {
+	width: 200px;
+	background: none;
+	border: 0;
+	border-bottom: 2px solid black;
+	height: 30px;
+	padding: 5px;
+	color: black;
+	margin-bottom: 15px;
+}
+
+#save {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-right: 20px;
+	float: right;
+	display: block;
+}
+
+#simpanbutton {
+	background: #4CAF50;
+	border: none;
+	padding: 10px;
+	font-size: 20px;
+	color: white;
+	display: inline-block;
+}

@@ -1,0 +1,68 @@
+/* Style for Checkout */
+
+#trolley-wrapper {
+	width: 100%;
+	clear: both;
+}
+
+#trolley-wrapper .row {
+	margin-bottom: 10px;
+	border-bottom: 2px solid black;
+}
+
+#trolley-wrapper .column {
+	border: 0px solid black;
+	height: 160px;
+	float: left;
+	padding: 10px;
+	width: 50%;
+	word-wrap: break-word;
+	white-space: normal;
+}
+
+.column .image img {
+	width: 100px;
+	height: 100px;
+	margin: 10px 20px;
+}
+
+#trolley-wrapper .row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+#checkoutbutton {
+	background: #4CAF50;
+	border: none;
+	padding: 10px;
+	font-size: 20px;
+	color: white;
+	display: inline-block;
+}
+
+#delete {
+	background: #dc3545;
+	border: none;
+	padding: 10px;
+	font-size: 20px;
+	color: white;
+	display: inline-block;
+}
+
+#checkall {
+	background: #17a2b8;
+	border: none;
+	padding: 10px;
+	font-size: 20px;
+	color: white;
+	display: inline-block;
+}
+
+#checkout {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-right: 20px;
+	float: right;
+	display: block;
+}

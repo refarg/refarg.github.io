@@ -1,0 +1,101 @@
+/* Style for Tambah Barang */
+
+#barangdetail-wrapper {
+	width: 500px;
+	clear: both;
+	margin: auto;
+	margin-bottom: 10px;
+}
+
+#barangdetail-wrapper input,
+#barangdetail-wrapper textarea {
+	background: none;
+	border: 0;
+	border-bottom: 2px solid black;
+	height: 30px;
+	color: black;
+	margin-bottom: 15px;
+}
+
+#save {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-right: 20px;
+	float: right;
+	display: block;
+}
+
+#simpanbutton {
+	background: #4CAF50;
+	border: none;
+	padding: 10px;
+	font-size: 20px;
+	color: white;
+	display: inline-block;
+}
+
+input[type=text],
+select,
+textarea {
+	width: 100%;
+	padding: 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+	resize: vertical;
+}
+
+label {
+	padding: 12px 12px 12px 0;
+	display: inline-block;
+}
+
+.container {
+	padding: 20px;
+}
+
+.col-25 {
+	float: left;
+	width: 25%;
+	margin-top: 6px;
+}
+
+.col-75 {
+	float: left;
+	width: 75%;
+	margin-top: 6px;
+}
+
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+input[type="file"] {
+	display: none;
+}
+
+.ingambarlabel {
+	border: 1px solid #ccc;
+	border-radius: 0 0 8px 8px;
+	display: inline-block;
+	padding: 6px 12px;
+	cursor: pointer;
+	width: 94.40%;
+	text-align: center;
+}
+
+#gambarpreview {
+	width: 460px;
+	height: 250px;
+	border-radius: 8px 8px 0 0;
+}
+
+@media screen and (max-width: 600px) {
+	.col-25,
+	.col-75 {
+		width: 100%;
+		margin-top: 0;
+	}
+}
