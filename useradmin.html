@@ -1,0 +1,220 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<head>
+    <title>FURNICRAFT - Admin</title>
+    <link rel="stylesheet" href="assets/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/master.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/admindash.css" type="text/css">
+</head>
+
+<body>
+  <script type="text/javascript" src="assets/jquery341.js"></script>
+    <div id="container">
+        <div id="header-wrapper">
+            <div id="logo">FURNICRAFT</div>
+            <div id="headlink">
+                <a href="checkout.html" title="trolley"><i class="fa fa-shopping-cart"></i></a> |
+                <a href="useradmin.html"><i class="fa fa-user-circle"></i> Admin</a>
+            </div>
+        </div>
+        <div style="clear:both" />
+        <div id="menu">
+            <div id="left">
+                <ul>
+                    <li><a class="active" href="index.html">Home</a></li>
+                    <li><a href="#new">Whats New</a></li>
+                    <li><a href="#furniture">Furniture</a></li>
+                    <li><a href="#handicraft">Handicraft</a></li>
+                    <li><a href="#supersale">Super Sale</a></li>
+                    <li><a href="#about">About Us</a></li>
+                </ul>
+            </div>
+            <div id="right">
+                <div class="search-container">
+                    <form action="">
+                        <input type="search">
+                        <i class="fa fa-search"></i>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div style="clear:both" />
+        <div class="carousel">
+            <input id="image1" type="radio" name="image-selector" checked="checked" />
+            <label for="image4">View image 4</label>
+            <img src="assets/imageslide/1.jpg" />
+            <input id="image2" type="radio" name="image-selector" />
+            <label for="image1">View image 1</label>
+            <img src="assets/imageslide/2.jpg" />
+            <input id="image3" type="radio" name="image-selector" />
+            <label for="image2">View image 2</label>
+            <img src="assets/imageslide/3.jpg" />
+            <input id="image4" type="radio" name="image-selector" />
+            <label for="image3">View image 3</label>
+            <img src="assets/imageslide/4.jpg" />
+            <label for="image4">View image 4</label>
+            <label for="image1">View image 1</label>
+        </div>
+        <div style="clear:both" />
+        <div id="content-wrapper">
+            <div id="trolley-wrapper">
+                <div class="title">
+                    ADMIN DASHBOARD
+                </div>
+                <div class="row">
+                  <div id="area">
+                  <div class="tab">
+                    <button class="tablinks" onclick="opTabs(event, 'detailcharts')" id="defaultOpen">Sales</button>
+                    <button class="tablinks" onclick="opTabs(event, 'furni')">Furniture</button>
+                    <button class="tablinks" onclick="opTabs(event, 'Tokyo')">Tokyo</button>
+                  </div>
+
+                  <div id="detailcharts" class="tabcontent">
+                    <div id="notitle" style="display:block">
+                    <span><h3 style="float:left">Sales</h3></span><span><a href="chartdetails.html" style="float:right;margin:10px 0px;" id="button">CHECK DETAILS</a></span>
+                    </div>
+                    <p><canvas id="charts" style="border:0px solid grey; width:100%;" height="400" width="1000"></canvas></p>
+
+                  </div>
+
+                  <div id="furni" class="tabcontent">
+                    <div id="notitle" style="display:block">
+                    <span><h3 style="float:left">Furniture</h3></span><span><a href="tambahbarang.html" style="float:right;margin:10px 5px;" id="button">ADD</a><a href="products.html" style="float:right;margin:10px 0px;" id="button">MORE</a></span>
+                    </div>
+                    <p></p>
+                  </div>
+
+                  <div id="Tokyo" class="tabcontent">
+                    <h3>Tokyo</h3>
+                    <p>Tokyo is the capital of Japan.</p>
+                  </div>
+                  </div>
+                </div>
+                <div style="clear:both" /></div>
+                <div id="footer-wrapper">
+                  <div id="left32">
+                    <div id="logo">FURNICRAFT</div>
+                  </div>
+                  <div id="right">
+                    <div class="details">
+                        <i class="fa fa-address-book"></i> 089293012392
+                        <br>
+                        <i class="fa fa-facebook-square"></i> Social Media
+                        <br>
+                        <i class="fa fa-instagram"></i> Social Media
+                        <br>
+                        <i class="fa fa-map-marker"></i> Jl. Kalimantan No. 37,
+                        <br>Kampus Tegalboto, Jember,
+                        <br>Jawa Timur, 68121, Indonesia
+                    </div>
+                  </div>
+                    <div style="clear:both" /></div>
+            <div style="clear:both" /></div>
+
+            <script>
+function opTabs(evt, cityName) {
+
+  var i, tabcontent, tablinks;
+  tabcontent = $(".tabcontent");
+  tabcontent.css("display","none");
+  /* for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  } */
+  tablinks = $(".tablinks");
+  tablinks.removeClass('active');
+  /* for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  } */
+  $('#'+cityName).css("display","block");
+  evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+
+            <script type="text/javascript">
+            $(document).ready(function(){
+              getCharts();
+              });
+
+            function getCharts() {
+            $.ajax({
+            url: 'assets/data.json',
+            success: function(response) {
+                var ctx = $('#charts')[0].getContext('2d');
+                console.log(ctx);
+                ctx.strokeStyle = 'black';
+                ctx.beginPath();
+                ctx.moveTo(5,331);
+                ctx.lineTo(1000-5, 331);
+                ctx.stroke();
+
+                ctx.beginPath();
+                ctx.moveTo(25,350);
+                ctx.lineTo(25,5);
+                ctx.stroke();
+
+                ctx.font = "50px";
+                ctx.fillStyle = 'black';
+                ctx.fillText("ID Barang", 30, 340);
+
+                ctx.save();
+                ctx.translate(-360, 320);
+                ctx.rotate(-Math.PI/2);
+                ctx.textAlign = "center";
+                ctx.font = "50px";
+                ctx.fillStyle = 'black';
+                ctx.fillText("Jumlah Barang", 30, 380);
+                ctx.restore();
+
+                var x = 50;
+                var y = 0;
+
+                for (var i = 0; i < response.count; i++) {
+                  var tempx = x;
+                  var tempy = 330 - response.result[i].Terjual;
+                  ctx.fillStyle = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
+                  ctx.fillRect(tempx,tempy,50,response.result[i].Terjual);
+
+
+                  ctx.font = "70px";
+                  ctx.fillStyle = 'black';
+                  ctx.fillText(response.result[i].ID, tempx+24, 360);
+                  ctx.fillText("("+response.result[i].Terjual+" unit)", tempx+8, 370);
+
+                  var tempx = x += 70;
+                  }
+
+                  var findthis = $('#furni').find('p');
+                  var count = 1;
+                  var temp = "";
+                  for (var i = 0; i < 8; i++) {
+                  //console.log(response.result[i]);
+                  var head = "<div class='list'><div class='append"+response.result[i].ID+"'></div><a href='productdetail.html' title='"+response.result[i].Nama+"'><div class='column'><div class='imagecont'><img src='"+response.result[i].imgurl+"' alt='"+response.result[i].Deskripsi+"' /><div class='productitle'>"+response.result[i].Nama+"</div></div></a></div>";
+                  var close = "</div>";
+                  var normal = "<div class='append"+response.result[i].ID+"'></div><a href='productdetail.html' title='"+response.result[i].Nama+"'><div class='column'><div class='imagecont'><img src='"+response.result[i].imgurl+"' alt='"+response.result[i].Deskripsi+"' /><div class='productitle'>"+response.result[i].Nama+"</div></div></a></div>";
+                  if(count==1){
+                    temp += head;
+                      }
+                  else{
+                    temp += normal;
+                  }
+                  if(count==4){
+                    temp += close;
+                    count = 0;
+                  }
+                  count++;
+                  }
+                  findthis.append(temp);
+
+
+                }
+              });
+            }
+
+            </script>
+</body>
+
+</html>

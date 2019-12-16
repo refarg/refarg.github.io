@@ -5,6 +5,7 @@
     <title>FURNICRAFT - Login</title>
     <link rel="stylesheet" href="assets/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/loginsignup.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/modallogsign.css" type="text/css">
     <style type="text/css">
         #userlogin button {
             border: 0;
@@ -16,6 +17,7 @@
 </head>
 
 <body>
+  <script type="text/javascript" src="assets/jquery341.js"></script>
     <div id="container">
         <div id="logo">
             <a href="index.html">FURNICRAFT</a>
@@ -25,9 +27,9 @@
             Masuk
             <br>
             <form id="userlogin">
-                <input type="text" placeholder="Nama Pengguna" required/>
+                <input type="text" id="username" placeholder="Nama Pengguna"/>
                 <br>
-                <input type="password" placeholder="Kata Sandi" required/>
+                <input type="password" id="pass" placeholder="Kata Sandi"/>
                 <br>
                 <button type="submit">Submit</button> <a href="#">Lupa Password?</a>
             </form>
@@ -47,6 +49,72 @@
             Furnicraft &#169; 2019.
         </div>
     </div>
+
+    <!-- Modal -->
+    <div class="modale" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-header">
+          <h2>Login Success!</h2>
+          <a href="#" class="btn-close closemodale" aria-hidden="true">&times;</a>
+        </div>
+        <div class="modal-body">
+
+        <div class="modal-footer">
+          <a href="#" class="btn" id="btn_ingresar">Login</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- /Modal -->
+      <script type="text/javascript">
+        $(document).on('submit','#userlogin',function(e){
+          e.preventDefault();
+            var user = $("#username").val();
+            var pass = $("#pass").val();
+            if (user=="" || pass=="") {
+              $('.modal-dialog').find('h2').html("Login Failed!");
+              $(".modal-body").html("Mohon isi Nama Pengguna dan Kata Sandi!");
+                $('.modale').addClass('opened');
+            }
+            else if(user=="afriza"&&pass=="afriza"){
+              $('.modal-dialog').find('h2').html("Login Success!");
+              $(".modal-body").html("Welcome, "+user+"!");
+                $('.modale').addClass('opened');
+                var url = "user.html";
+                // $(location).attr('href',url);
+                var delay = 2000;
+                setTimeout(function() {
+                  window.location.href = url;
+                }, delay);
+            }
+            else if(user=="admin"&&pass=="admin"){
+              $('.modal-dialog').find('h2').html("Login Success!");
+              $(".modal-body").html("Welcome, "+user+"!");
+                $('.modale').addClass('opened');
+                var url = "useradmin.html";
+                // $(location).attr('href',url);
+                var delay = 2000;
+                setTimeout(function() {
+                  window.location.href = url;
+                }, delay);
+            }
+            else{
+              $('.modal-dialog').find('h2').html("Login Failed!");
+              $(".modal-body").html("Pengguna Tidak Diketahui!");
+                $('.modale').addClass('opened');
+            }
+          return false;
+        });
+        $('.openmodale').click(function (e) {
+         e.preventDefault();
+            $('.modale').addClass('opened');
+          });
+        $('.closemodale').click(function (e) {
+         e.preventDefault();
+         $('.modale').removeClass('opened');
+    });
+      </script>
 </body>
 
 </html>

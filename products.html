@@ -18,6 +18,7 @@
 </head>
 
 <body>
+  <script type="text/javascript" src="assets/jquery341.js"></script>
     <div id="container">
         <div id="header-wrapper">
             <div id="logo"><a href="index.html">FURNICRAFT</a></div>
@@ -137,27 +138,70 @@
                     </div>
                 </div>
                 <div class="morelink">
-                    <a href="#">MORE &#187;</a>
+                    <a href="" id="getmore">MORE &#187;</a>
                 </div>
             </div>
         </div>
         <div style="clear:both" />
         <div id="footer-wrapper">
+          <div id="left32">
+            <div id="logo">FURNICRAFT</div>
+          </div>
+          <div id="right">
             <div class="details">
                 <i class="fa fa-address-book"></i> 089293012392
                 <br>
-                <i class="fa fa-facebook-square"></i> Social Media
+                <a href=""><i class="fa fa-facebook-square"></i> facebook.me/furnicraft</a>
                 <br>
-                <i class="fa fa-instagram"></i> Social Media
+                <a href=""><i class="fa fa-instagram"></i> Twitter @furnicraft</a>
                 <br>
                 <i class="fa fa-map-marker"></i> Jl. Kalimantan No. 37,
                 <br>Kampus Tegalboto, Jember,
                 <br>Jawa Timur, 68121, Indonesia
             </div>
-            <div style="clear:both" />
-        </div>
+          </div>
+            <div style="clear:both" /></div>
         <div style="clear:both" />
     </div>
+    <script type="text/javascript">
+    $('#getmore').click(function(e){
+    e.preventDefault();
+    ambilData();
+    })
+    function ambilData() {
+    $.ajax({
+    url: 'assets/data.json',
+    success: function(response) {
+    var findthis = $('#content-wrapper').find('.highlight');
+    var count = 1;
+    var temp = "";
+    var more = "<div class='morelink'><a href='#' id='getmore'>MORE &#187;</a></div>";
+    for (var i = 0; i < response.count; i++) {
+    //console.log(response.result[i]);
+    var head = "<div class='list'><div class='append"+response.result[i].ID+"'></div><a href='productdetail.html' title='"+response.result[i].Nama+"'><div class='column'><div class='imagecont'><img src='"+response.result[i].imgurl+"' alt='"+response.result[i].Deskripsi+"' /><div class='productitle'>"+response.result[i].Nama+"</div></div></a></div>";
+    var close = "</div>";
+    var normal = "<div class='append"+response.result[i].ID+"'></div><a href='productdetail.html' title='"+response.result[i].Nama+"'><div class='column'><div class='imagecont'><img src='"+response.result[i].imgurl+"' alt='"+response.result[i].Deskripsi+"' /><div class='productitle'>"+response.result[i].Nama+"</div></div></a></div>";
+    if(count==1){
+      temp += head;
+        }
+    else{
+      temp += normal;
+    }
+    if(count==4){
+      temp += close;
+      count = 0;
+    }
+    count++;
+    }
+    $('.highlight').append(temp);
+    $('.morelink').remove();
+    $('.highlight').append(more);
+    }
+
+      });
+    }
+
+    </script>
 </body>
 
 </html>

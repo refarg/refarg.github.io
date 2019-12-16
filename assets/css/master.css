@@ -42,6 +42,7 @@ body {
 	width: 100%;
 	height: 47px;
 	background-color: #333;
+
 }
 
 #menu ul {
@@ -54,7 +55,7 @@ body {
 
 #menu li {
 	float: left;
-	border-right: 1px solid #bbb;
+	/* border-right: 1px solid #bbb; */
 }
 
 #menu li:last-child {
@@ -236,7 +237,15 @@ body {
 	/*  background:#107814;*/
 	background: #000;
 	padding: 10px;
-	color: white;
+	color: #fff;
+}
+
+#footer-wrapper a{
+	color: #fff;
+}
+
+#footer-wrapper a:hover{
+	text-decoration:underline;
 }
 
 #musthave,
@@ -250,6 +259,18 @@ body {
 	position: absolute;
 	right: 13%;
 	top: 1.5%;
+}
+
+#footer-wrapper #left, #footer-wrapper #right{
+	width:50%;
+}
+#footer-wrapper #left32{
+	width:32%;
+	float:left;
+}
+
+#footer-wrapper #logo{
+	border-color:black;
 }
 
 .details {
@@ -280,8 +301,9 @@ body {
 
 #musthave .imagecont {
 	position: relative;
-	padding: 10px;
-	left: 16%;
+	padding: 0px;
+	left: 0px;
+	margin:10px auto;
 }
 
 #musthave .imagecont img {
@@ -295,7 +317,7 @@ body {
 #musthave .judul {
 	position: absolute;
 	bottom: 25px;
-	left: 12px;
+	left: 2px;
 	font-size: 20px;
 	background: #fff;
 	padding: 5px;
@@ -304,18 +326,22 @@ body {
 }
 
 #musthave #list {
-	content: "";
-	display: table;
-	clear: both;
-	width: 100%;
+	/* content: ""; */
+	/* display: table; */
+	/* clear: both; */
+	/* width: 100%; */
 	margin: auto;
+	display:flex;
+	justify-content: space-between;
 }
 
 #musthave .column {
 	float: left;
-	width: 48%;
+	width: 50%;
 	padding: 5px;
 	margin: auto;
+	display:flex;
+	justify-content: space-between;
 }
 
 #highlight #list {
@@ -373,16 +399,34 @@ body {
 		margin-left: auto;
 		margin-right: auto;
 	}
-	#musthave .column {
-		float: left;
-		width: 40%;
-		padding: 10px;
+	#musthave .imagecont img {
+		width: 200px;
+		height: 200px;
+		border: 2px solid #000;
+		padding: 5px;
+		border-radius: 0px;
 	}
+	#musthave .judul {
+		width: 200px;
+	}
+	/* #musthave .column {
+		float: left;
+		width: 42%;
+		padding: 10px;
+	} */
 	#headlink {
 		right: 0%;
 	}
 }
 
+#multipbtn {
+	background: #4CAF50;
+	border: none;
+	padding: 10px;
+	font-size: 20px;
+	color: white;
+	display: inline-block;
+}
 
 /* Giving some space */
 
